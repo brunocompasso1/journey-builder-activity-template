@@ -84,6 +84,10 @@ exports.execute = function (req, res) {
       // decoded in arguments
       var decodedArgs = decoded.inArguments[0];
 
+      console.log("##### Decoded args start #####")
+      console.log(decodedArgs);
+      console.log("##### Decoded args end #####")
+
       // SINCH TEST
 
       var request = require("request");
