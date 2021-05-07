@@ -31,6 +31,7 @@
     }
   },
   "configurationArguments": {
+    "applicationExtensionKey": "654a0853-507b-481f-b22d-3012039a5ae8",
     "save": {
       "url": "https://brunocompasso1-journey-builder.herokuapp.com/journeybuilder/save",
       "verb": "POST",
