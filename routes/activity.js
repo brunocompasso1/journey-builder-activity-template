@@ -83,10 +83,12 @@ exports.execute = function (req, res) {
     if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
       // decoded in arguments
       var decodedArgs = decoded.inArguments[0];
+      console.log("inArguments", JSON.stringify(decoded.inArguments));
+      console.log("decodedArgs", JSON.stringify(decodedArgs));
 
-      console.log("##### Decoded args start #####")
+      console.log("##### Decoded args start #####");
       console.log(decodedArgs);
-      console.log("##### Decoded args end #####")
+      console.log("##### Decoded args end #####");
 
       // SINCH TEST
 
