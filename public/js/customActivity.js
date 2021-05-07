@@ -59,7 +59,12 @@ define([
             payload['arguments'].execute.inArguments.length > 0
         );
 
-        var inArguments = hasInArguments ? payload['arguments'].execute.inArguments : {};
+        // var inArguments = hasInArguments ? payload['arguments'].execute.inArguments : {};
+
+        var inArguments = payload['arguments'].execute.inArguments = [{
+            "tokens": authTokens,
+            "emailAddress": "{{Contact.Attribute.Pedidos_Test.EmailAddress}}"
+        }];
 
         console.log(inArguments);
 
