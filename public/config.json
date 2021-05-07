@@ -16,7 +16,9 @@
   "arguments": {
     "execute": {
       "inArguments": [
-        { "emailAddress": "{{Contact.Attribute.Pedidos_Test.EmailAddress}}"}
+        {
+          "emailAddress": "{{Contact.Attribute.Pedidos_Test.EmailAddress}}"
+        }
       ],
       "outArguments": [],
       "url": "https://brunocompasso1-journey-builder.herokuapp.com/journeybuilder/execute",
@@ -67,7 +69,15 @@
   "schema": {
     "arguments": {
       "execute": {
-        "inArguments": [],
+        "inArguments": [
+          {
+            "emailAddress": {
+              "dataType": "Email",
+              "isNullable": false,
+              "direction": "in"
+            }
+          }
+        ],
         "outArguments": []
       }
     }
