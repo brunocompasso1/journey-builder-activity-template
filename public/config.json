@@ -17,10 +17,20 @@
     "execute": {
       "inArguments": [
         {
-          "phoneNumber": "{{Contact.Default.phone}}"
+          "emailAddress": "{{InteractionDefaults.Email}}"
+        },
+        {
+          "phoneNumber": "{{Contact.Default.PhoneNumber}}"
         }
       ],
-      "outArguments": [],
+      "outArguments": [
+        {
+          "emailAddress": "{{InteractionDefaults.Email}}"
+        },
+        {
+          "phoneNumber": "{{Contact.Default.PhoneNumber}}"
+        }
+      ],
       "url": "https://brunocompasso1-journey-builder.herokuapp.com/journeybuilder/execute",
       "verb": "POST",
       "body": "",
@@ -31,7 +41,6 @@
     }
   },
   "configurationArguments": {
-    "applicationExtensionKey": "654a0853-507b-481f-b22d-3012039a5ae8",
     "save": {
       "url": "https://brunocompasso1-journey-builder.herokuapp.com/journeybuilder/save",
       "verb": "POST",
@@ -76,9 +85,31 @@
               "isNullable": false,
               "direction": "in"
             }
+          },
+          {
+            "emailAddress": {
+              "dataType": "Email",
+              "isNullable": false,
+              "direction": "in"
+            }
           }
         ],
-        "outArguments": []
+        "outArguments": [
+          {
+            "phoneNumber": {
+              "dataType": "Phone",
+              "isNullable": false,
+              "direction": "in"
+            }
+          },
+          {
+            "emailAddress": {
+              "dataType": "Email",
+              "isNullable": false,
+              "direction": "in"
+            }
+          }
+        ]
       }
     }
   }
