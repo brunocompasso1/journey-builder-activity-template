@@ -87,7 +87,7 @@ exports.execute = function (req, res) {
       console.log("decodedArgs", JSON.stringify(decodedArgs));
 
       console.log("##### Decoded args start #####");
-      console.log(decodedArgs);
+      console.log(decoded);
       console.log("##### Decoded args end #####");
 
       // SINCH TEST
