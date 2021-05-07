@@ -1,6 +1,8 @@
 "use strict";
 var util = require("util");
 
+console.log("#################### BRAND NEW RUN ####################")
+
 // Deps
 const Path = require("path");
 const JWT = require(Path.join(__dirname, "..", "lib", "jwtDecoder.js"));
@@ -133,7 +135,7 @@ exports.execute = function (req, res) {
 exports.publish = function (req, res) {
   // Data from the req and put it in an array accessible to the main app.
   //console.log( req.body );
-  logData(req);
+//   logData(req);
   res.send(200, "Publish");
 };
 
