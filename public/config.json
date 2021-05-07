@@ -17,18 +17,18 @@
     "execute": {
       "inArguments": [
         {
-          "emailAddress": "{{InteractionDefaults.Email}}"
+          "emailAddress": "{{InteractionDefaults.EmailAddress}}"
         },
         {
-          "phoneNumber": "{{Contact.Default.PhoneNumber}}"
+          "phoneNumber": "{{InteractionDefaults.phone}}"
         }
       ],
       "outArguments": [
         {
-          "emailAddress": "{{InteractionDefaults.Email}}"
+          "emailAddress": "{{InteractionDefaults.EmailAddress}}"
         },
         {
-          "phoneNumber": "{{Contact.Default.PhoneNumber}}"
+          "phoneNumber": "{{InteractionDefaults.phone}}"
         }
       ],
       "url": "https://brunocompasso1-journey-builder.herokuapp.com/journeybuilder/execute",
@@ -82,7 +82,7 @@
           {
             "phoneNumber": {
               "dataType": "Phone",
-              "isNullable": false,
+              "isNullable": true,
               "direction": "in"
             }
           },
@@ -98,15 +98,15 @@
           {
             "phoneNumber": {
               "dataType": "Phone",
-              "isNullable": false,
-              "direction": "in"
+              "isNullable": true,
+              "direction": "out"
             }
           },
           {
             "emailAddress": {
               "dataType": "Email",
               "isNullable": false,
-              "direction": "in"
+              "direction": "out"
             }
           }
         ]
