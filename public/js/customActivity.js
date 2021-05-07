@@ -91,7 +91,8 @@ define([
         var postcardTextValue = $('#postcard-text').val();
 
         payload['arguments'].execute.inArguments = [{
-            "tokens": authTokens
+            "tokens": authTokens,
+            "emailAddress": "{{Contact.Attribute.Pedidos_Test.EmailAddress}}"
         }];
         
         payload['metaData'].isConfigured = true;
