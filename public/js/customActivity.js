@@ -61,10 +61,10 @@ define([
 
         // var inArguments = hasInArguments ? payload['arguments'].execute.inArguments : {};
 
-        var inArguments = [{
-            "tokens": authTokens,
-            "emailAddress": "{{Contact.Attribute.Pedidos_Test.EmailAddress}}"
-        }];
+        // var inArguments = [{
+        //     "tokens": authTokens,
+        //     "emailAddress": "{{Contact.Attribute.Pedidos_Test.EmailAddress}}"
+        // }];
 
         console.log(inArguments);
 
