@@ -1,76 +1,69 @@
 {
-  "workflowApiVersion": "1.1",
-  "metaData": {
-    "icon": "images/icon.png",
-    "iconSmall": "images/icon.png",
-    "category": "message"
-  },
-  "type": "REST",
-  "lang": {
-    "en-US": {
-      "name": "Nome do componente",
-      "description": "Descrição do componente"
+    "workflowApiVersion": "1.1",
+    "metaData": {
+        "icon": "images/icon.png",
+        "iconSmall": "images/iconSmall.png",
+        "category": "message"
     },
-    "pt-BR": {
-      "name": "Nome do componente",
-      "description": "Descrição do componente"
-    }
-  },
-  "arguments": {
-    "execute": {
-      "inArguments": [],
-      "outArguments": [],
-      "url": "https://brunocompasso1-journey-builder.herokuapp.com/journeybuilder/execute",
-      "verb": "POST",
-      "body": "",
-      "headers": "{ \"foo\": \"bar\" }",
-      "format": "json",
-      "useJwt": true,
-      "timeout": 10000
-    }
-  },
-  "configurationArguments": {
-    "applicationExtensionKey": "654a0853-507b-481f-b22d-3012039a5ae8",
-    "save": {
-      "url": "https://brunocompasso1-journey-builder.herokuapp.com/journeybuilder/save",
-      "verb": "POST",
-      "useJwt": true
+    "type": "REST",
+    "lang": {
+        "en-US": {
+            "name": "Template",
+          "description": "A Template for a custom Journey Builder activity",
+          "step1Label": "Configure Activity"
+        }
     },
-    "publish": {
-      "url": "https://brunocompasso1-journey-builder.herokuapp.com/journeybuilder/publish",
-      "verb": "POST",
-      "useJwt": true
-    },
-    "validate": {
-      "url": "https://brunocompasso1-journey-builder.herokuapp.com/journeybuilder/validate",
-      "verb": "POST",
-      "useJwt": true
-    },
-    "stop": {
-      "url": "https://brunocompasso1-journey-builder.herokuapp.com/journeybuilder/stop",
-      "verb": "POST",
-      "useJwt": true
-    }
-  },
-  "wizardSteps": [
-    {
-      "label": "Configure Step",
-      "key": "step1"
-    }
-  ],
-  "userInterfaces": {
-    "configModal": {
-      "height": 200,
-      "width": 300,
-      "fullscreen": true
-    }
-  },
-  "schema": {
     "arguments": {
-      "execute": {
-        "inArguments": [],
-        "outArguments": []
+        "execute": {
+           "inArguments":[],
+          "outArguments": [],
+          "url": "https://brunocompasso1-journey-builder.herokuapp.com/journeybuilder/execute",
+           "verb": "POST",
+            "body": "",
+            "header": "",
+            "format": "json",
+            "useJwt": true,
+            "timeout": 10000
+        }
+    },
+    "configurationArguments": {
+      "save": {
+        "url": "https://brunocompasso1-journey-builder.herokuapp.com/journeybuilder/save",
+          "verb": "POST",
+        "useJwt": true
+       },
+       "publish": {
+        "url": "https://brunocompasso1-journey-builder.herokuapp.com/journeybuilder/publish",
+           "verb": "POST",
+        "useJwt": true
+       },
+      "stop": {
+        "url": "https://brunocompasso1-journey-builder.herokuapp.com/journeybuilder/stop",
+           "verb": "POST",
+        "useJwt": true
+      },
+      "validate": {
+        "url": "https://brunocompasso1-journey-builder.herokuapp.com/journeybuilder/validate",
+        "verb": "POST",
+        "useJwt": true
       }
+    },
+    "wizardSteps": [
+        { "label": "Configure Activity", "key": "step1" }
+    ],
+    "userInterfaces": {
+        "configModal": {
+            "height": 400,
+            "width": 1000,
+          "fullscreen": false
+        }
+    },
+    "schema": {
+        "arguments": {
+            "execute": {
+                "inArguments": [],
+                "outArguments": []
+            }
+        }
     }
-  }
 }
