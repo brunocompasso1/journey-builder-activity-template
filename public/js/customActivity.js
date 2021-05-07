@@ -47,17 +47,18 @@ define([
     }
 
     function initialize(data) {
+        console.log("############### WE ARE HERE ###############")
         console.log(data);
         if (data) {
             payload = data;
         }
         
-        var hasInArguments = Boolean(
-            payload['arguments'] &&
-            payload['arguments'].execute &&
-            payload['arguments'].execute.inArguments &&
-            payload['arguments'].execute.inArguments.length > 0
-        );
+        // var hasInArguments = Boolean(
+        //     payload['arguments'] &&
+        //     payload['arguments'].execute &&
+        //     payload['arguments'].execute.inArguments &&
+        //     payload['arguments'].execute.inArguments.length > 0
+        // );
 
         // var inArguments = hasInArguments ? payload['arguments'].execute.inArguments : {};
 
