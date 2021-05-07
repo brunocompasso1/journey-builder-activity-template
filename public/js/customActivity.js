@@ -5,6 +5,8 @@ define([
 ) {
     'use strict';
 
+    console.log("############### WE ARE HERE ###############")
+
     var connection = new Postmonger.Session();
     var authTokens = {};
     var payload = {};
@@ -47,7 +49,6 @@ define([
     }
 
     function initialize(data) {
-        console.log("############### WE ARE HERE ###############")
         console.log(data);
         if (data) {
             payload = data;
