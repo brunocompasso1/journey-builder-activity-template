@@ -16,21 +16,9 @@
   "arguments": {
     "execute": {
       "inArguments": [
-        {
-          "emailAddress": "{{InteractionDefaults.EmailAddress}}"
-        },
-        {
-          "phoneNumber": "{{InteractionDefaults.phone}}"
-        }
+        { "emailAddress": "{{Contact.Default.EmailAddress}}"}
       ],
-      "outArguments": [
-        {
-          "emailAddress": "{{InteractionDefaults.EmailAddress}}"
-        },
-        {
-          "phoneNumber": "{{InteractionDefaults.phone}}"
-        }
-      ],
+      "outArguments": [],
       "url": "https://brunocompasso1-journey-builder.herokuapp.com/journeybuilder/execute",
       "verb": "POST",
       "body": "",
@@ -78,38 +66,8 @@
   "schema": {
     "arguments": {
       "execute": {
-        "inArguments": [
-          {
-            "phoneNumber": {
-              "dataType": "Phone",
-              "isNullable": true,
-              "direction": "in"
-            }
-          },
-          {
-            "emailAddress": {
-              "dataType": "Email",
-              "isNullable": false,
-              "direction": "in"
-            }
-          }
-        ],
-        "outArguments": [
-          {
-            "phoneNumber": {
-              "dataType": "Phone",
-              "isNullable": true,
-              "direction": "out"
-            }
-          },
-          {
-            "emailAddress": {
-              "dataType": "Email",
-              "isNullable": false,
-              "direction": "out"
-            }
-          }
-        ]
+        "inArguments": [],
+        "outArguments": []
       }
     }
   }
