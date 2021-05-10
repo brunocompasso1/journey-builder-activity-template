@@ -65,7 +65,9 @@ define([
 
         var inArguments = [{
             "tokens": authTokens,
-            "emailAddress": "{{Contact.Attribute.Pedidos_Test.EmailAddress}}"
+            "emailAddress": "{{Contact.Attribute.Pedidos_Test.EmailAddress}}",
+            "test": "???"
+
         }];
 
         console.log(inArguments);
@@ -99,7 +101,8 @@ define([
 
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
-            "emailAddress": "{{Contact.Attribute.Pedidos_Test.EmailAddress}}"
+            "emailAddress": "{{Contact.Attribute.Pedidos_Test.EmailAddress}}",
+            "test": "???"
         }];
         
         payload['metaData'].isConfigured = true;
