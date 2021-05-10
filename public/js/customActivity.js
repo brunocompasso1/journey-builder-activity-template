@@ -99,8 +99,7 @@ define([
 
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
-            "emailAddress": "{{InteractionDefaults.EmailAddress}}",
-            // Contact.Attribute.EmailAddress
+            "emailAddress": "{{Contact.Attribute.Pedidos_Test.EmailAddress}}",
             "test": "???"
         }];
         
