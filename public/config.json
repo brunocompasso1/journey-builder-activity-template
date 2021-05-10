@@ -17,7 +17,7 @@
     "execute": {
       "inArguments": [
         {
-          "emailAddress": "{{InteractionDefaults.Email}}"
+          "emailAddrexx": "{{InteractionDefaults.Email}}"
         }
       ],
       "outArguments": [],
@@ -71,7 +71,7 @@
       "execute": {
         "inArguments": [
           {
-            "emailAddress": {
+            "emailAddrexx": {
               "dataType": "Email",
               "isNullable": false,
               "direction": "in"
