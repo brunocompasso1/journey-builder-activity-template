@@ -65,9 +65,7 @@ define([
 
         var inArguments = [{
             "tokens": authTokens,
-            "emailAddress": "{{Contact.Attribute.Pedidos_Test.EmailAddress}}",
-            "test": "???"
-
+            "emailAddress": "{{Contact.Attribute.Pedidos_Test.EmailAddress}}"
         }];
 
         console.log(inArguments);
@@ -101,7 +99,7 @@ define([
 
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
-            "emailAddress": "{{Contact.Attribute.Pedidos_Test.EmailAddress}}",
+            "emailAddress": "{{InteractionDefaults.Email}}",
             "test": "???"
         }];
         
