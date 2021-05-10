@@ -101,8 +101,8 @@ define([
             "tokens": authTokens,
             "emailAddress": "{{InteractionDefaults.EmailAddress}}",
             "email": "{{InteractionDefaults.Email}}",
-            "phone": "{{Contact.Default.PhoneNumber}}",
-            // "email2": "{{Contact.Attribute.EmailAddress}}",
+            // "phone": "{{Contact.Default.PhoneNumber}}",
+            "email2": "{{Contact.Attribute.EmailAddress}}",
             // "phone2": "{{Contact.Attribute.phone}}",
             "test": "???"
         }];
