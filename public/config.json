@@ -20,7 +20,7 @@
           "emailAddress": "{{InteractionDefaults.Email}}"
         },
         {
-          "phoneNumber": "{{InteractionDefaults.Phone}}"
+          "phoneNumber": "{{Contact.Default.Phone}}"
         }
       ],
       "outArguments": [],
