@@ -18,6 +18,9 @@
       "inArguments": [
         {
           "emailAddress": "{{InteractionDefaults.Email}}"
+        },
+        {
+          "phone": "{{InteractionDefaults.Phone}}"
         }
       ],
       "outArguments": [],
@@ -73,6 +76,13 @@
           {
             "emailAddress": {
               "dataType": "Email",
+              "isNullable": false,
+              "direction": "in"
+            }
+          },
+          {
+            "emailAddress": {
+              "dataType": "Phone",
               "isNullable": false,
               "direction": "in"
             }
