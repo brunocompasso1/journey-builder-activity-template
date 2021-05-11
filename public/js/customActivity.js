@@ -101,7 +101,7 @@ define([
             "tokens": authTokens,
             // "Phone": "{{InteractionDefaults.Phone}}",
             // "phoneNumber": "{{Contact.Default.PhoneNumber}}",
-            "phoneNumber": "{{Contact.Attribute.Pedidos_Test.phone}}",
+            "phoneNumber": "{{Contact.Default.PhoneNumber}}",
             "test": "???"
         }];
         
