@@ -81,7 +81,7 @@
             }
           },
           {
-            "emailAddress": {
+            "phone": {
               "dataType": "Phone",
               "isNullable": false,
               "direction": "in"
