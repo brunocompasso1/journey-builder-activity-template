@@ -92,33 +92,33 @@ exports.execute = function (req, res) {
       console.log(decoded.inArguments[0].phone);
       console.log("##### Decoded args end #####");
 
-      // SINCH TEST
+    //   SINCH TEST
 
-    //   var request = require("request");
-    //   var messageData = {
-    //     from: "447537454551",
-    //     to: ["5519971159735"],
-    //     body: "This is a test message from your Sinch account",
-    //   };
-    //   var options = {
-    //     method: "POST",
-    //     url:
-    //       "https://us.sms.api.sinch.com/xms/v1/70daa9ae286148cd9875c470d19ff086/batches",
-    //     headers: {
-    //       accept: "application/json",
-    //       "content-type": "application/json",
-    //       Authorization: "Bearer 255788527a4d45cbb24e1c1fbd9b7afd",
-    //     },
-    //     body: JSON.stringify(messageData),
-    //   };
+      var request = require("request");
+      var messageData = {
+        from: "447537454551",
+        to: [decoded.inArguments[0].phone],
+        body: "This is a test message from your Sinch account",
+      };
+      var options = {
+        method: "POST",
+        url:
+          "https://us.sms.api.sinch.com/xms/v1/70daa9ae286148cd9875c470d19ff086/batches",
+        headers: {
+          accept: "application/json",
+          "content-type": "application/json",
+          Authorization: "Bearer 255788527a4d45cbb24e1c1fbd9b7afd",
+        },
+        body: JSON.stringify(messageData),
+      };
 
-    //   request(options, function (error, response, body) {
-    //     console.log(response.body);
-    //     if (error) throw new Error(error);
-    //     console.log(body);
-    //   });
+      request(options, function (error, response, body) {
+        console.log(response.body);
+        if (error) throw new Error(error);
+        console.log(body);
+      });
 
-      // SINCH TEST
+    //   SINCH TEST
 
     //   logData(req);
       res.send(200, "Execute");
