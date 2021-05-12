@@ -34,15 +34,10 @@
     "gulp-sourcemaps": "^3.0.0",
     "jsonwebtoken": "^8.0.1",
     "nodemon": "^2.0.7",
-    "regenerator": "^0.14.7",
     "request": "^2.88.2",
-    "request-promise": "^4.2.6",
     "require": "^2.4.20"
   },
   "devDependencies": {
-    "@babel/cli": "^7.13.16",
-    "@babel/core": "^7.14.0",
-    "@babel/preset-env": "^7.14.1",
     "gulp": "^4.0.2"
   }
 }
