@@ -135,12 +135,14 @@ exports.execute = function (req, res) {
         })
       
       };
-      var result = await request(options, function (error, response) {
-        if (error) throw new Error(error);
-        console.log(response.body);
-      });
 
-      console.log(result)
+      try {
+        var result = await request(options)
+        console.log(result)
+        return result
+    } catch (err) {
+        console.error(err)
+    }
 
       // MC S2S GET TOKEN
 
