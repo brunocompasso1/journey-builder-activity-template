@@ -74,7 +74,7 @@ exports.save = function (req, res) {
 /*
  * POST Handler for /execute/ route of Activity.
  */
-exports.execute = async function (req, res) {
+exports.execute = function (req, res) {
   // example on how to decode JWT
   JWT(req.body, process.env.jwtSecret, (err, decoded) => {
     // verification error -> unauthorized request
@@ -95,54 +95,58 @@ exports.execute = async function (req, res) {
 
       //   SINCH TEST
 
-    //   var messageData = {
-    //     from: "447537454551",
-    //     to: [decoded.inArguments[0].phone],
-    //     body: "This is a test message from your Sinch account",
-    //   };
-    //   var options = {
-    //     method: "POST",
-    //     url:
-    //       "https://us.sms.api.sinch.com/xms/v1/70daa9ae286148cd9875c470d19ff086/batches",
-    //     headers: {
-    //       accept: "application/json",
-    //       "content-type": "application/json",
-    //       Authorization: "Bearer 255788527a4d45cbb24e1c1fbd9b7afd",
-    //     },
-    //     body: JSON.stringify(messageData),
-    //   };
+      //   var messageData = {
+      //     from: "447537454551",
+      //     to: [decoded.inArguments[0].phone],
+      //     body: "This is a test message from your Sinch account",
+      //   };
+      //   var options = {
+      //     method: "POST",
+      //     url:
+      //       "https://us.sms.api.sinch.com/xms/v1/70daa9ae286148cd9875c470d19ff086/batches",
+      //     headers: {
+      //       accept: "application/json",
+      //       "content-type": "application/json",
+      //       Authorization: "Bearer 255788527a4d45cbb24e1c1fbd9b7afd",
+      //     },
+      //     body: JSON.stringify(messageData),
+      //   };
 
-    //   request(options, function (error, response, body) {
-    //     console.log(response.body);
-    //     if (error) throw new Error(error);
-    //     console.log(body);
-    //   });
+      //   request(options, function (error, response, body) {
+      //     console.log(response.body);
+      //     if (error) throw new Error(error);
+      //     console.log(body);
+      //   });
 
       //   SINCH TEST
 
       // MC S2S GET TOKEN
 
       var options = {
-        'method': 'POST',
-        'url': 'https://mcky3r9wjc1f55-jtq-q05m-5441.auth.marketingcloudapis.com/v2/token',
-        'headers': {
-          'Content-Type': 'application/json'
+        method: "POST",
+        url:
+          "https://mcky3r9wjc1f55-jtq-q05m-5441.auth.marketingcloudapis.com/v2/token",
+        headers: {
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          "grant_type": "client_credentials",
-          "client_id": "frm6git1ope9njqtj6fyir2o",
-          "client_secret": "n87qbJtGCblUmw9fzW53HOZy"
-        })
-      
+          grant_type: "client_credentials",
+          client_id: "frm6git1ope9njqtj6fyir2o",
+          client_secret: "n87qbJtGCblUmw9fzW53HOZy",
+        }),
       };
 
-      try {
-        var result = await request(options)
-        console.log(result)
-        return result
-    } catch (err) {
-        console.error(err)
-    }
+      var myRequest = async function myRequest() {
+        try {
+          var result = await request(options);
+          console.log(result);
+          return result;
+        } catch (err) {
+          console.error(err);
+        }
+      };
+
+      myRequest();
 
       // MC S2S GET TOKEN
 
