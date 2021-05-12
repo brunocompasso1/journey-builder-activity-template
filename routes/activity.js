@@ -8,7 +8,7 @@ const Path = require("path");
 const JWT = require(Path.join(__dirname, "..", "lib", "jwtDecoder.js"));
 var util = require("util");
 var http = require("https");
-var request = require("request");
+var request = require("request-promise");
 
 exports.logExecuteData = [];
 
@@ -95,28 +95,28 @@ exports.execute = function (req, res) {
 
       //   SINCH TEST
 
-      var messageData = {
-        from: "447537454551",
-        to: [decoded.inArguments[0].phone],
-        body: "This is a test message from your Sinch account",
-      };
-      var options = {
-        method: "POST",
-        url:
-          "https://us.sms.api.sinch.com/xms/v1/70daa9ae286148cd9875c470d19ff086/batches",
-        headers: {
-          accept: "application/json",
-          "content-type": "application/json",
-          Authorization: "Bearer 255788527a4d45cbb24e1c1fbd9b7afd",
-        },
-        body: JSON.stringify(messageData),
-      };
+    //   var messageData = {
+    //     from: "447537454551",
+    //     to: [decoded.inArguments[0].phone],
+    //     body: "This is a test message from your Sinch account",
+    //   };
+    //   var options = {
+    //     method: "POST",
+    //     url:
+    //       "https://us.sms.api.sinch.com/xms/v1/70daa9ae286148cd9875c470d19ff086/batches",
+    //     headers: {
+    //       accept: "application/json",
+    //       "content-type": "application/json",
+    //       Authorization: "Bearer 255788527a4d45cbb24e1c1fbd9b7afd",
+    //     },
+    //     body: JSON.stringify(messageData),
+    //   };
 
-      request(options, function (error, response, body) {
-        console.log(response.body);
-        if (error) throw new Error(error);
-        console.log(body);
-      });
+    //   request(options, function (error, response, body) {
+    //     console.log(response.body);
+    //     if (error) throw new Error(error);
+    //     console.log(body);
+    //   });
 
       //   SINCH TEST
 
@@ -135,10 +135,12 @@ exports.execute = function (req, res) {
         })
       
       };
-      request(options, function (error, response) {
+      var result = await request(options, function (error, response) {
         if (error) throw new Error(error);
         console.log(response.body);
       });
+
+      console.log(result)
 
       // MC S2S GET TOKEN
 
