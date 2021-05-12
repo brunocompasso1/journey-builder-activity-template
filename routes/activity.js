@@ -1,13 +1,14 @@
 "use strict";
 var util = require("util");
 
-console.log("#################### BRAND NEW RUN ####################")
+console.log("#################### BRAND NEW RUN ####################");
 
 // Deps
 const Path = require("path");
 const JWT = require(Path.join(__dirname, "..", "lib", "jwtDecoder.js"));
 var util = require("util");
 var http = require("https");
+var request = require("request");
 
 exports.logExecuteData = [];
 
@@ -31,23 +32,23 @@ function logData(req) {
     secure: req.secure,
     originalUrl: req.originalUrl,
   });
-//   console.log("body: " + util.inspect(req.body));
-//   console.log("headers: " + req.headers);
-//   console.log("trailers: " + req.trailers);
-//   console.log("method: " + req.method);
-//   console.log("url: " + req.url);
-//   console.log("params: " + util.inspect(req.params));
-//   console.log("query: " + util.inspect(req.query));
-//   console.log("route: " + req.route);
-//   console.log("cookies: " + req.cookies);
-//   console.log("ip: " + req.ip);
-//   console.log("path: " + req.path);
-//   console.log("host: " + req.host);
-//   console.log("fresh: " + req.fresh);
-//   console.log("stale: " + req.stale);
-//   console.log("protocol: " + req.protocol);
-//   console.log("secure: " + req.secure);
-//   console.log("originalUrl: " + req.originalUrl);
+  //   console.log("body: " + util.inspect(req.body));
+  //   console.log("headers: " + req.headers);
+  //   console.log("trailers: " + req.trailers);
+  //   console.log("method: " + req.method);
+  //   console.log("url: " + req.url);
+  //   console.log("params: " + util.inspect(req.params));
+  //   console.log("query: " + util.inspect(req.query));
+  //   console.log("route: " + req.route);
+  //   console.log("cookies: " + req.cookies);
+  //   console.log("ip: " + req.ip);
+  //   console.log("path: " + req.path);
+  //   console.log("host: " + req.host);
+  //   console.log("fresh: " + req.fresh);
+  //   console.log("stale: " + req.stale);
+  //   console.log("protocol: " + req.protocol);
+  //   console.log("secure: " + req.secure);
+  //   console.log("originalUrl: " + req.originalUrl);
 }
 
 /*
@@ -56,7 +57,7 @@ function logData(req) {
 exports.edit = function (req, res) {
   // Data from the req and put it in an array accessible to the main app.
   //console.log( req.body );
-//   logData(req);
+  //   logData(req);
   res.send(200, "Edit");
 };
 
@@ -66,7 +67,7 @@ exports.edit = function (req, res) {
 exports.save = function (req, res) {
   // Data from the req and put it in an array accessible to the main app.
   //console.log( req.body );
-//   logData(req);
+  //   logData(req);
   res.send(200, "Save");
 };
 
@@ -92,9 +93,8 @@ exports.execute = function (req, res) {
       console.log(decoded.inArguments[0].phone);
       console.log("##### Decoded args end #####");
 
-    //   SINCH TEST
+      //   SINCH TEST
 
-      var request = require("request");
       var messageData = {
         from: "447537454551",
         to: [decoded.inArguments[0].phone],
@@ -118,9 +118,31 @@ exports.execute = function (req, res) {
         console.log(body);
       });
 
-    //   SINCH TEST
+      //   SINCH TEST
 
-    //   logData(req);
+      // MC S2S GET TOKEN
+
+      var options = {
+        'method': 'POST',
+        'url': 'https://mcky3r9wjc1f55-jtq-q05m-5441.auth.marketingcloudapis.com/v2/token',
+        'headers': {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          "grant_type": "client_credentials",
+          "client_id": "frm6git1ope9njqtj6fyir2o",
+          "client_secret": "n87qbJtGCblUmw9fzW53HOZy"
+        })
+      
+      };
+      request(options, function (error, response) {
+        if (error) throw new Error(error);
+        console.log(response.body);
+      });
+
+      // MC S2S GET TOKEN
+
+      //   logData(req);
       res.send(200, "Execute");
     } else {
       console.error("inArguments invalid.");
@@ -135,7 +157,7 @@ exports.execute = function (req, res) {
 exports.publish = function (req, res) {
   // Data from the req and put it in an array accessible to the main app.
   //console.log( req.body );
-//   logData(req);
+  //   logData(req);
   res.send(200, "Publish");
 };
 
