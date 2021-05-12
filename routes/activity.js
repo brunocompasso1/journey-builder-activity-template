@@ -136,7 +136,7 @@ exports.execute = function (req, res) {
         }),
       };
 
-      var myRequest = async function myRequest() {
+      async function myRequest() {
         try {
           var result = await request(options);
           console.log(result);
@@ -144,7 +144,7 @@ exports.execute = function (req, res) {
         } catch (err) {
           console.error(err);
         }
-      };
+      }
 
       myRequest();
 
