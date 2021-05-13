@@ -89,9 +89,9 @@ exports.execute = function (req, res) {
       console.log("inArguments", JSON.stringify(decoded.inArguments));
       console.log("decodedArgs", JSON.stringify(decodedArgs));
 
-      console.log("##### Decoded args start #####");
-      console.log(decoded.inArguments[0].phone);
-      console.log("##### Decoded args end #####");
+    //   console.log("##### Decoded args start #####");
+    //   console.log(decoded.inArguments[0].phone);
+    //   console.log("##### Decoded args end #####");
 
       //   SINCH TEST
 
